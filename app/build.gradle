@@ -25,28 +25,37 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-
-
-
-
-
-
-
-
-
-    compile 'com.android.support:appcompat-v7:25.3.0'
+    //Support and Design libraries
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:25.3.0'
+
+    //ORM DB
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+
+    //Http requests libraries
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
-    compile 'com.google.code.gson:gson:2.8.0'
+
+    //Events library
     compile 'com.squareup:otto:1.3.8'
-    compile 'com.jakewharton:butterknife:8.5.1'
+
+    //Preferences library
     compile 'com.pixplicity.easyprefs:library:1.8.1@aar'
+
+    //Fonts library
     compile 'com.vstechlab.easyfonts:easyfonts:1.0.0'
-    testCompile 'junit:junit:4.12'
+
+    //Loading views library
+    compile 'org.buraktamturk:loadingview:1.0.0@aar'
+
+    //Inject view library
+    compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    //Testing
+    testCompile 'junit:junit:4.12'
 }
 
 repositories {

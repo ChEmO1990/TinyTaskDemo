@@ -65,7 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             case R.id.action_logout:
                 SessionManager.clearUserSession();
                 Intent intentExit = new Intent(BaseActivity.this, LoginActivity.class);
-                intentExit.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intentExit.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentExit);
                 finish();
                 break;
