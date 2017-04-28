@@ -7,4 +7,5 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/colorPrimary"
     android:theme="@style/TinyTaskToolbar"
-    app:popupTheme="@style/TinyTaskPopupToolbar" />
+    app:popupTheme="@style/TinyTaskPopupToolbar"
+    app:layout_scrollFlags="scroll|enterAlways"/>

@@ -15,4 +15,9 @@
     <string name="action_logout">Cerrar sesión</string>
     <string name="welcome">Bienvenido</string>
 
+    <string name="item_item">Item:</string>
+    <string name="item_business">Negocio:</string>
+    <string name="item_phone">Teléfono:</string>
+    <string name="item_website">Sitio web:</string>
+    <string name="item_zipcode">Codigo postal:</string>
 </resources>
