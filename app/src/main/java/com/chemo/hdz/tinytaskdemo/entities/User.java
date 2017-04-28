@@ -39,7 +39,6 @@ public class User extends Model {
     }
 
     public User(int idUser, String userName, String password, String name, int age, String gender, String userType, String habilityType) {
-        super();
         this.idUser = idUser;
         this.userName = userName;
         this.password = password;
@@ -48,5 +47,19 @@ public class User extends Model {
         this.gender = gender;
         this.userType = userType;
         this.habilityType = habilityType;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "idUser=" + idUser +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", userType='" + userType + '\'' +
+                ", habilityType='" + habilityType + '\'' +
+                '}';
     }
 }

@@ -11,7 +11,7 @@ import com.activeandroid.annotation.Table;
 @Table(name = "Hability")
 public class Hability extends Model {
     @Column(name = "id_hability")
-    public int hability;
+    public int idHability;
 
     @Column(name = "description")
     public String description;
@@ -20,9 +20,16 @@ public class Hability extends Model {
         super();
     }
 
-    public Hability(int hability, String description) {
-        super();
-        this.hability = hability;
+    public Hability(int idHability, String description) {
+        this.idHability = idHability;
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Hability{" +
+                "idHability=" + idHability +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

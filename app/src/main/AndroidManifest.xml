@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.chemo.hdz.tinytaskdemo">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".TinyTaskApp"
@@ -12,20 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="AA_DB_NAME"
             android:value="TinyTaskDemo.db" />
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="1" />
-
+            android:value="3" />
         <meta-data
             android:name="AA_MODELS"
             android:value=".com.chemo.hdz.tinytaskdemo.entities.Hability, .com.chemo.hdz.tinytaskdemo.entities.Task, .com.chemo.hdz.tinytaskdemo.entities.User" />
 
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.LaunchActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -34,6 +32,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.WebServiceActivity"
+            android:label="@string/title_activity_webservice"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.TechnicalActivity"
+            android:label="@string/title_activity_technical"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name=".ui.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 
