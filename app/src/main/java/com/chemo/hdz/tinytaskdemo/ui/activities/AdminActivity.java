@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
@@ -57,7 +58,6 @@ public class AdminActivity extends BaseActivity {
         recycler.setItemViewCacheSize(20);
         recycler.setDrawingCacheEnabled(true);
         recycler.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-
         recycler.setAdapter(mAdapter);
 
         fab.setOnClickListener(new View.OnClickListener() {

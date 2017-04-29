@@ -1,18 +1,22 @@
 package com.chemo.hdz.tinytaskdemo.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.activeandroid.query.Select;
+import com.amulyakhare.textdrawable.TextDrawable;
 import com.chemo.hdz.tinytaskdemo.R;
 import com.chemo.hdz.tinytaskdemo.entities.Hability;
 import com.chemo.hdz.tinytaskdemo.entities.Task;
 import com.chemo.hdz.tinytaskdemo.entities.User;
 import com.chemo.hdz.tinytaskdemo.util.Constants;
+import com.chemo.hdz.tinytaskdemo.util.WordUtilities;
 import com.vstechlab.easyfonts.EasyFonts;
 
 import java.util.List;
@@ -28,6 +32,9 @@ public class AssignTaskAdapter extends RecyclerView.Adapter<AssignTaskAdapter.We
     private List<Task> itemsList;
 
     public class WebServiceHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        @BindView(R.id.icon_assign_task)
+        ImageView icon;
+
         @BindView(R.id.item_description_task)
         TextView item_description_task;
 
@@ -63,19 +70,27 @@ public class AssignTaskAdapter extends RecyclerView.Adapter<AssignTaskAdapter.We
     public void onBindViewHolder(WebServiceHolder holder, int position) {
         Task item = itemsList.get(position);
 
+        User userInfo = new Select().from(User.class).where("id_user = ?", item.idUser).executeSingle();
+
+        TextDrawable drawable = TextDrawable.builder().buildRound(WordUtilities.getInitialLetters(userInfo.name), Color.RED);
+        holder.icon.setImageDrawable(drawable);
+
         holder.item_description_task.setText(mContext.getString(R.string.description) + " " + item.description);
         holder.item_description_task.setTypeface(EasyFonts.robotoLight(mContext));
 
-        holder.item_duration_task.setText(mContext.getString(R.string.time_task) + " " + item.time);
+        holder.item_duration_task.setText(mContext.getString(R.string.time_task) + " " + item.time + " " + mContext.getString(R.string.minutes));
         holder.item_duration_task.setTypeface(EasyFonts.robotoLight(mContext));
 
-        holder.item_status_task.setTypeface(EasyFonts.robotoLight(mContext));
+        holder.item_status_task.setTypeface(EasyFonts.robotoBlack(mContext));
 
+        //Check if the current task is in process
         //Check if the current task is in process
         if( item.status.equals(Constants.STATUS_IN_PROCESS ) ) {
             holder.item_status_task.setText(mContext.getString(R.string.current_status) + " " + mContext.getString(R.string.status_in_process));
+            holder.item_status_task.setTextColor(Color.RED);
         } else {
             holder.item_status_task.setText(mContext.getString(R.string.current_status) + " " + mContext.getString(R.string.statu_finish));
+            holder.item_status_task.setTextColor(Color.GREEN);
         }
     }
 

@@ -42,5 +42,14 @@
 
     <string name="status_in_process">En proceso</string>
     <string name="statu_finish">Tarea terminada</string>
+    <string name="minutes">minutos</string>
+
+    <string name="error_no_description">Introduzca una breve descripción.</string>
+    <string name="error_no_time">Introduzca una duración mayor a 0 minutos.</string>
+    <string name="error_max_time">La duración de la tarea es demasiado larga</string>
+    <string name="error_admin">El administrador solo puede asignar tareas a usuarios tecnicos.</string>
+    <string name="empty_data">Antes de continuar, por favor introduzca la información completa.</string>
+
+
 
 </resources>

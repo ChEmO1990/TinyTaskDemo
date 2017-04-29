@@ -3,7 +3,9 @@ package com.chemo.hdz.tinytaskdemo.ui.fragments;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -79,9 +81,23 @@ public class AddTaskDialogFragment extends BaseSubscriberFragment {
                 .setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        int id = itemsHabilities.get(spinnerHabilities.getSelectedItemPosition()).idHability;
-                        String desc = description.getText().toString();
-                        new TaskManager(id, desc, Integer.parseInt(duration.getText().toString() )).assignTask();
+                        if( TextUtils.isEmpty( description.getText().toString()) || TextUtils.isEmpty( duration.getText().toString())) {
+                            Toast.makeText(getActivity(), getString(R.string.empty_data), Toast.LENGTH_LONG).show();
+                        } else {
+                            int time = Integer.parseInt( duration.getText().toString().trim());
+                            int id = itemsHabilities.get(spinnerHabilities.getSelectedItemPosition()).idHability;
+                            String desc = description.getText().toString();
+
+                            if( time > 1440 ) {
+                                Toast.makeText(getActivity(), getString(R.string.error_max_time), Toast.LENGTH_LONG).show();
+                            } else if( time <= 0 ) {
+                                Toast.makeText(getActivity(), getString(R.string.error_no_time), Toast.LENGTH_LONG).show();
+                            } else if( id == 1 ) {
+                                Toast.makeText(getActivity(), getString(R.string.error_admin), Toast.LENGTH_LONG).show();
+                            } else {
+                                new TaskManager(id, desc, time).assignTask();
+                            }
+                        }
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {

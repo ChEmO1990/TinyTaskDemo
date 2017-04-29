@@ -47,6 +47,9 @@ dependencies {
     //Fonts library
     compile 'com.vstechlab.easyfonts:easyfonts:1.0.0'
 
+    //Circles names library
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
     //Inject view library
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
@@ -57,7 +60,6 @@ dependencies {
 
 repositories {
     jcenter()
-    //Add these two lines
     mavenCentral()
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }

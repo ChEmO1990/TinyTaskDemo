@@ -40,7 +40,6 @@ public class RestManager {
 
             @Override
             public void failure(RetrofitError error) {
-                Log.i("Error", error.getResponse().getReason());
                 error.printStackTrace();
             }
         };

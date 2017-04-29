@@ -1,6 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="window_width_and_height">16dp</dimen>
+    <dimen name="item_width_and_height">10dp</dimen>
     <dimen name="title_font_size">48sp</dimen>
     <dimen name="title_font_dialog_task">34sp</dimen>
     <dimen name="spinner_item_text_size">16sp</dimen>

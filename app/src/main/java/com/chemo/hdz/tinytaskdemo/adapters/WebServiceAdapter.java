@@ -1,6 +1,7 @@
 package com.chemo.hdz.tinytaskdemo.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amulyakhare.textdrawable.TextDrawable;
 import com.chemo.hdz.tinytaskdemo.R;
 import com.chemo.hdz.tinytaskdemo.rest.responses.ItemResponse;
+import com.chemo.hdz.tinytaskdemo.util.WordUtilities;
 import com.vstechlab.easyfonts.EasyFonts;
 
 import java.util.List;
@@ -68,6 +71,9 @@ public class WebServiceAdapter extends RecyclerView.Adapter<WebServiceAdapter.We
     @Override
     public void onBindViewHolder(WebServiceHolder holder, int position) {
         ItemResponse item = itemsList.get(position);
+
+        TextDrawable drawable = TextDrawable.builder().buildRound(WordUtilities.getInitialLetters(item.getFarm_name()), Color.RED);
+        holder.icon.setImageDrawable(drawable);
 
         holder.item_name.setText(mContext.getString(R.string.item_item) + " " + item.getItem());
         holder.item_name.setTypeface(EasyFonts.robotoLight(mContext));
