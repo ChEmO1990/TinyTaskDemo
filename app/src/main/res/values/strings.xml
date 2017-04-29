@@ -21,11 +21,26 @@
     <string name="item_website">Sitio web:</string>
     <string name="item_zipcode">Codigo postal:</string>
 
+    <string name="description_task">Descripción</string>
+    <string name="duration_task">Duración</string>
+    <string name="type_task">Tipo de tarea</string>
+
+    <string name="add_task_title">Crear tarea</string>
+    <string name="add">Agregar</string>
+    <string name="cancel">Cancelar</string>
     <string name="no_phone">No disponible</string>
     <string name="confirm_exit">¿Está seguro que desea cerrar la sesión?</string>
     <string name="confirm">Confirmación</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
 
+    <string name="assign_user">Asignación:</string>
+    <string name="type_hability">Tipo de habilidad:</string>
+    <string name="description">Descripción:</string>
+    <string name="time_task">Tiempo asignado:</string>
+    <string name="current_status">Estatus actual:</string>
+
+    <string name="status_in_process">En proceso</string>
+    <string name="statu_finish">Tarea terminada</string>
 
 </resources>

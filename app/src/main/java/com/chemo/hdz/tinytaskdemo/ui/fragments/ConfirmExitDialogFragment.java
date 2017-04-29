@@ -1,4 +1,4 @@
-package com.chemo.hdz.tinytaskdemo.ui.dialogs;
+package com.chemo.hdz.tinytaskdemo.ui.fragments;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -9,8 +9,6 @@ import android.support.v7.app.AlertDialog;
 
 import com.chemo.hdz.tinytaskdemo.R;
 import com.chemo.hdz.tinytaskdemo.bus.BusProvider;
-import com.chemo.hdz.tinytaskdemo.events.CloseSessionEvent;
-import com.chemo.hdz.tinytaskdemo.events.NoCloseSessionEvent;
 import com.chemo.hdz.tinytaskdemo.session.SessionManager;
 import com.chemo.hdz.tinytaskdemo.ui.activities.BaseActivity;
 import com.chemo.hdz.tinytaskdemo.ui.activities.LoginActivity;
@@ -19,7 +17,7 @@ import com.chemo.hdz.tinytaskdemo.ui.activities.LoginActivity;
  * Created by chemo1990 on 28/04/17.
  */
 
-public class ConfirmExitDialogFragment extends DialogFragment {
+public class ConfirmExitDialogFragment extends BaseSubscriberFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
@@ -36,7 +34,7 @@ public class ConfirmExitDialogFragment extends DialogFragment {
                 })
                 .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        BusProvider.getInstance().post( new NoCloseSessionEvent());
+
                     }
                 });
         // Create the AlertDialog object and return it

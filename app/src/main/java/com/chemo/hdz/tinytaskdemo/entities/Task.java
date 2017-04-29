@@ -8,11 +8,8 @@ import com.activeandroid.annotation.Table;
  * Created by chemo on 4/27/17.
  */
 
-@Table(name = "Task")
+@Table(name = "Task", id = "id_task")
 public class Task extends Model {
-    @Column(name = "id_task")
-    public int idTask;
-
     @Column(name = "id_user")
     public int idUser;
 
@@ -28,14 +25,12 @@ public class Task extends Model {
     @Column(name = "status")
     public String status;
 
-    public Task(int idTask) {
+    public Task() {
         super();
-        this.idTask = idTask;
     }
 
-    public Task(int idTask, int idUser, int idHability, int time, String description, String status) {
-        super();
-        this.idTask = idTask;
+
+    public Task(int idUser, int idHability, int time, String description, String status) {
         this.idUser = idUser;
         this.idHability = idHability;
         this.time = time;

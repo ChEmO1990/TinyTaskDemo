@@ -11,4 +11,8 @@ public class Constants {
     public final static String USER_TYPE = "user_type";
     public final static String HABILITY_TYPE = "habilityType";
     public final static String FLAG_DATA_DUMMY = "flag_data_dummy";
+    public final static String STATUS_IN_PROCESS = "IN_PROCESS";
+    public final static String STATUS_FINISH = "FINISH";
+
+
 }

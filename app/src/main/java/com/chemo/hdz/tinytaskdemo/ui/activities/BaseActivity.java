@@ -9,15 +9,10 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.chemo.hdz.tinytaskdemo.R;
 import com.chemo.hdz.tinytaskdemo.bus.BusProvider;
-import com.chemo.hdz.tinytaskdemo.events.CloseSessionEvent;
-import com.chemo.hdz.tinytaskdemo.events.NoCloseSessionEvent;
-import com.chemo.hdz.tinytaskdemo.session.SessionManager;
-import com.chemo.hdz.tinytaskdemo.ui.dialogs.ConfirmExitDialogFragment;
-import com.squareup.otto.Subscribe;
+import com.chemo.hdz.tinytaskdemo.ui.fragments.ConfirmExitDialogFragment;
 
 import butterknife.ButterKnife;
 

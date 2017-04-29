@@ -34,11 +34,14 @@ public class User extends Model {
     @Column(name = "hability_type")
     public String habilityType;
 
+    @Column(name = "time_work")
+    public int timeWork;
+
     public User() {
         super();
     }
 
-    public User(int idUser, String userName, String password, String name, int age, String gender, String userType, String habilityType) {
+    public User(int idUser, String userName, String password, String name, int age, String gender, String userType, String habilityType, int timeWork) {
         this.idUser = idUser;
         this.userName = userName;
         this.password = password;
@@ -47,6 +50,7 @@ public class User extends Model {
         this.gender = gender;
         this.userType = userType;
         this.habilityType = habilityType;
+        this.timeWork = timeWork;
     }
 
     @Override

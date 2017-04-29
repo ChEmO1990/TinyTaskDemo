@@ -27,9 +27,6 @@ public class Hability extends Model {
 
     @Override
     public String toString() {
-        return "Hability{" +
-                "idHability=" + idHability +
-                ", description='" + description + '\'' +
-                '}';
+        return description;
     }
 }

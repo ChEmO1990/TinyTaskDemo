@@ -90,14 +90,7 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-
     @OnClick(R.id.btnCancel) void cancel() {
         finish();
-    }
-
-    @Subscribe
-    public void onSendWeatherEvent(SendItemServiceEvent sendItemServiceEvent) {
-        List<ItemResponse> socratas = sendItemServiceEvent.getSocratas();
-        Toast.makeText(LoginActivity.this, "Hola " + socratas.size() , Toast.LENGTH_LONG).show();
     }
 }
