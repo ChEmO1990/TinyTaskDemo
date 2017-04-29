@@ -1,4 +1,4 @@
-package com.chemo.hdz.tinytaskdemo.ui;
+package com.chemo.hdz.tinytaskdemo.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,6 @@ import com.chemo.hdz.tinytaskdemo.session.SessionManager;
 import com.squareup.otto.Subscribe;
 import com.vstechlab.easyfonts.EasyFonts;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;

@@ -47,9 +47,6 @@ dependencies {
     //Fonts library
     compile 'com.vstechlab.easyfonts:easyfonts:1.0.0'
 
-    //Loading views library
-    compile 'org.buraktamturk:loadingview:1.0.0@aar'
-
     //Inject view library
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'

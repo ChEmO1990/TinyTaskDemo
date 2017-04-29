@@ -1,8 +1,6 @@
 package com.chemo.hdz.tinytaskdemo.adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Movie;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chemo.hdz.tinytaskdemo.R;
-import com.chemo.hdz.tinytaskdemo.models.WebServiceItem;
+import com.chemo.hdz.tinytaskdemo.rest.responses.ItemResponse;
 import com.vstechlab.easyfonts.EasyFonts;
 
 import java.util.List;
@@ -24,7 +22,7 @@ import butterknife.ButterKnife;
  */
 public class WebServiceAdapter extends RecyclerView.Adapter<WebServiceAdapter.WebServiceHolder> {
     private Context mContext;
-    private List<WebServiceItem> itemsList;
+    private List<ItemResponse> itemsList;
 
     public class WebServiceHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.item_icon)
@@ -56,7 +54,7 @@ public class WebServiceAdapter extends RecyclerView.Adapter<WebServiceAdapter.We
         }
     }
 
-    public WebServiceAdapter(Context mContext, List<WebServiceItem> itemsList) {
+    public WebServiceAdapter(Context mContext, List<ItemResponse> itemsList) {
         this.mContext = mContext;
         this.itemsList = itemsList;
     }
@@ -69,19 +67,25 @@ public class WebServiceAdapter extends RecyclerView.Adapter<WebServiceAdapter.We
 
     @Override
     public void onBindViewHolder(WebServiceHolder holder, int position) {
-        WebServiceItem item = itemsList.get(position);
+        ItemResponse item = itemsList.get(position);
 
         holder.item_name.setText(mContext.getString(R.string.item_item) + " " + item.getItem());
         holder.item_name.setTypeface(EasyFonts.robotoLight(mContext));
 
-        holder.item_business.setText(mContext.getString(R.string.item_business) + " " + item.getBusinessName());
+        holder.item_business.setText(mContext.getString(R.string.item_business) + " " + item.getBusiness());
         holder.item_business.setTypeface(EasyFonts.robotoLight(mContext));
 
-        holder.item_phone.setText(mContext.getString(R.string.item_phone) + " " + item.getPhone());
+        holder.item_phone.setText(mContext.getString(R.string.item_phone) + " " + item.getPhone1());
         holder.item_phone.setTypeface(EasyFonts.robotoLight(mContext));
 
-        holder.item_website.setText(mContext.getString(R.string.item_website) + " " + item.getWebsite());
-        holder.item_website.setTypeface(EasyFonts.robotoLight(mContext));
+        //Check if exit any website
+        if( item.getWebsite() == null ) {
+            holder.item_website.setText(mContext.getString(R.string.item_website) + " " + mContext.getString(R.string.no_phone));
+            holder.item_website.setTypeface(EasyFonts.robotoLight(mContext));
+        } else {
+            holder.item_website.setText(mContext.getString(R.string.item_website) + " " + item.getWebsite());
+            holder.item_website.setTypeface(EasyFonts.robotoLight(mContext));
+        }
 
         holder.item_zipcode.setText(mContext.getString(R.string.item_zipcode) + " " + item.getZipcode());
         holder.item_zipcode.setTypeface(EasyFonts.robotoLight(mContext));

@@ -1,16 +1,11 @@
-package com.chemo.hdz.tinytaskdemo.ui;
+package com.chemo.hdz.tinytaskdemo.ui.activities;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.Toast;
 
 import com.chemo.hdz.tinytaskdemo.R;
-import com.squareup.otto.Produce;
-import com.squareup.otto.Subscribe;
+import com.chemo.hdz.tinytaskdemo.ui.activities.BaseActivity;
 
 import butterknife.BindView;
 

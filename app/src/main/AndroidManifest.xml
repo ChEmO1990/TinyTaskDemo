@@ -23,7 +23,7 @@
             android:value=".com.chemo.hdz.tinytaskdemo.entities.Hability, .com.chemo.hdz.tinytaskdemo.entities.Task, .com.chemo.hdz.tinytaskdemo.entities.User" />
 
         <activity
-            android:name=".ui.LaunchActivity"
+            android:name=".ui.activities.LaunchActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -33,20 +33,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.AdminActivity"
+            android:name=".ui.activities.AdminActivity"
             android:label="@string/title_activity_admin"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.WebServiceActivity"
+            android:name=".ui.activities.WebServiceActivity"
             android:label="@string/title_activity_webservice"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.TechnicalActivity"
+            android:name=".ui.activities.TechnicalActivity"
             android:label="@string/title_activity_technical"
             android:theme="@style/AppTheme"/>
 
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>

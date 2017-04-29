@@ -1,5 +1,8 @@
 package com.chemo.hdz.tinytaskdemo.rest.responses;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by chemo on 4/27/17.
  */
@@ -21,6 +24,6 @@ public class Website
     @Override
     public String toString()
     {
-        return "ClassPojo [url = "+url+"]";
+        return url;
     }
 }

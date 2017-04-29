@@ -1,12 +1,9 @@
-package com.chemo.hdz.tinytaskdemo.ui;
+package com.chemo.hdz.tinytaskdemo.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.chemo.hdz.tinytaskdemo.models.UserSession;
 import com.chemo.hdz.tinytaskdemo.session.SessionManager;
 
 /**

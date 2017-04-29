@@ -1,4 +1,4 @@
-package com.chemo.hdz.tinytaskdemo.ui;
+package com.chemo.hdz.tinytaskdemo.ui.activities;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -9,12 +9,15 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.chemo.hdz.tinytaskdemo.R;
 import com.chemo.hdz.tinytaskdemo.bus.BusProvider;
+import com.chemo.hdz.tinytaskdemo.events.CloseSessionEvent;
+import com.chemo.hdz.tinytaskdemo.events.NoCloseSessionEvent;
 import com.chemo.hdz.tinytaskdemo.session.SessionManager;
+import com.chemo.hdz.tinytaskdemo.ui.dialogs.ConfirmExitDialogFragment;
+import com.squareup.otto.Subscribe;
 
 import butterknife.ButterKnife;
 
@@ -63,11 +66,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 break;
 
             case R.id.action_logout:
-                SessionManager.clearUserSession();
-                Intent intentExit = new Intent(BaseActivity.this, LoginActivity.class);
-                intentExit.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intentExit);
-                finish();
+                new ConfirmExitDialogFragment().show(getSupportFragmentManager(), "confirm_dialog");
                 break;
         }
 

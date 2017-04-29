@@ -8,6 +8,8 @@ public class ItemResponse
 {
     private String category;
 
+    private Website website;
+
     private String item;
 
     private String zipcode;
@@ -17,6 +19,8 @@ public class ItemResponse
     private String farm_name;
 
     private String l;
+
+    private String suite;
 
     private Location_1 location_1;
 
@@ -32,6 +36,16 @@ public class ItemResponse
     public void setCategory (String category)
     {
         this.category = category;
+    }
+
+    public Website getWebsite ()
+    {
+        return website;
+    }
+
+    public void setWebsite (Website website)
+    {
+        this.website = website;
     }
 
     public String getItem ()
@@ -84,6 +98,16 @@ public class ItemResponse
         this.l = l;
     }
 
+    public String getSuite ()
+    {
+        return suite;
+    }
+
+    public void setSuite (String suite)
+    {
+        this.suite = suite;
+    }
+
     public Location_1 getLocation_1 ()
     {
         return location_1;
@@ -117,7 +141,6 @@ public class ItemResponse
     @Override
     public String toString()
     {
-        return "ClassPojo [category = "+category+", item = "+item+", zipcode = "+zipcode+", farmer_id = "+farmer_id+", farm_name = "+farm_name+", l = "+l+", location_1 = "+location_1+", phone1 = "+phone1+", business = "+business+"]";
+        return "ClassPojo [category = "+category+", website = "+website+", item = "+item+", zipcode = "+zipcode+", farmer_id = "+farmer_id+", farm_name = "+farm_name+", l = "+l+", suite = "+suite+", location_1 = "+location_1+", phone1 = "+phone1+", business = "+business+"]";
     }
 }
-

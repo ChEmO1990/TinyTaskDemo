@@ -1,5 +1,8 @@
 package com.chemo.hdz.tinytaskdemo.rest.responses;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by chemo on 4/27/17.
  */
@@ -7,11 +10,8 @@ package com.chemo.hdz.tinytaskdemo.rest.responses;
 public class Location_1
 {
     private String needs_recoding;
-
     private String longitude;
-
     private String latitude;
-
     private String human_address;
 
     public String getNeeds_recoding ()

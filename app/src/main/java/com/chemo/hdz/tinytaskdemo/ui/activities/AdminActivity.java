@@ -1,29 +1,15 @@
-package com.chemo.hdz.tinytaskdemo.ui;
+package com.chemo.hdz.tinytaskdemo.ui.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
 import com.chemo.hdz.tinytaskdemo.R;
-import com.chemo.hdz.tinytaskdemo.bus.BusProvider;
-import com.chemo.hdz.tinytaskdemo.rest.events.GetItemServiceEvent;
-import com.chemo.hdz.tinytaskdemo.rest.events.SendItemServiceEvent;
-import com.chemo.hdz.tinytaskdemo.rest.responses.ItemResponse;
-import com.squareup.otto.Produce;
-import com.squareup.otto.Subscribe;
-
-import java.util.List;
 
 import butterknife.BindView;
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
 
 public class AdminActivity extends BaseActivity {
     @BindView(R.id.toolbar_actionbar)
