@@ -4,5 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textSize="@dimen/spinner_item_text_size"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
     android:textColor="@color/colorPrimary" />
 
