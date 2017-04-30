@@ -2,6 +2,7 @@ package com.chemo.hdz.tinytaskdemo.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,10 +35,7 @@ public class LoginActivity extends BaseActivity {
     EditText editPassword;
 
     @BindView(R.id.btnLogin)
-    Button btnLogin;
-
-    @BindView(R.id.btnCancel)
-    Button btnCancel;
+    AppCompatButton btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +86,5 @@ public class LoginActivity extends BaseActivity {
                 }
             }
         }
-    }
-
-    @OnClick(R.id.btnCancel) void cancel() {
-        finish();
     }
 }
