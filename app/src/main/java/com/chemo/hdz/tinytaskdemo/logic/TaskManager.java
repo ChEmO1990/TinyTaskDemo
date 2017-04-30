@@ -86,7 +86,7 @@ public final class TaskManager {
         newTask.idUser = userSelected.idUser;
         newTask.idHability = idHability;
         newTask.description = description;
-        newTask.status = Constants.STATUS_IN_PROCESS;
+        newTask.currentStatus = 1;
         newTask.time = duration;
         newTask.save();
 

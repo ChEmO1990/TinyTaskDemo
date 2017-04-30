@@ -24,16 +24,97 @@ public class DataDummy {
 
     public static ArrayList<User> getDummyUsers() {
         ArrayList<User> users = new ArrayList<>();
-        users.add( new User(118, "anselmo", "java3098", "Anselmo Hernandez", 27, "M", "R", "1", 0));
-        users.add( new User(345, "melissa", "mely20", "Melissa Garcia", 23, "F", "T", "2", 0));
-        users.add( new User(221, "luis", "luis_198", "Luis Hernandez", 26, "M", "T", "2", 0));
-        users.add( new User(111, "heriberto22", "heri22", "Heriberto Contreras", 27, "M", "T", "4", 0));
-        users.add( new User(980, "yazmin", "yaz_25", "Yazmin Coronado", 27, "F", "T", "3", 0));
-        users.add( new User(420, "dany", "daniella", "Daniela Ruz", 30, "F", "T", "2,4", 0));
-        users.add( new User(983, "omar", "omarcito", "Omar Herrera", 27, "M", "T", "6", 0));
-        users.add( new User(443, "ulises", "123456", "Ulises RUiz", 27, "M", "T", "5", 0));
-        users.add( new User(784, "gaby33", "gaby1990", "Gabriela Hernandez", 27, "F", "T", "5", 0));
-        users.add( new User(254, "josefina", "josy25", "Josefina Martinez", 25, "F", "T", "1,4", 0));
+
+        User admin = new User();
+        admin.idUser = 1;
+        admin.userName = "anselmo";
+        admin.password = "chemo1990";
+        admin.name = "Anselmo Hernandez";
+        admin.userType = "R";
+        admin.habilityType = "1";
+        admin.timeWork = 0;
+
+        User user1 = new User();
+        user1.idUser = 143;
+        user1.userName = "salvador";
+        user1.password = "chava30";
+        user1.name = "Salvador Rodriguez";
+        user1.userType = "T";
+        user1.habilityType = "2";
+        user1.timeWork = 0;
+
+        User user2 = new User();
+        user2.idUser = 33;
+        user2.userName = "mike";
+        user2.password = "elmike";
+        user2.name = "Miguel Fuentes";
+        user2.userType = "T";
+        user2.habilityType = "3";
+        user2.timeWork = 0;
+
+        User user3 = new User();
+        user3.idUser = 424;
+        user3.userName = "beto90";
+        user3.password = "betito";
+        user3.name = "Alberto Castro";
+        user3.userType = "T";
+        user3.habilityType = "4";
+        user3.timeWork = 0;
+
+        User user4 = new User();
+        user4.idUser = 938;
+        user4.userName = "david89";
+        user4.password = "eldavid";
+        user4.name = "David Chavez";
+        user4.userType = "T";
+        user4.habilityType = "5";
+        user4.timeWork = 0;
+
+        User user5 = new User();
+        user5.idUser = 43;
+        user5.userName = "yazmin";
+        user5.password = "yaz90";
+        user5.name = "Yazmin Coronado";
+        user5.userType = "T";
+        user5.habilityType = "6";
+        user5.timeWork = 0;
+
+        User user6 = new User();
+        user6.idUser = 311;
+        user6.userName = "omar";
+        user6.password = "omarcito";
+        user6.name = "Omar Fuentes";
+        user6.userType = "T";
+        user6.habilityType = "3,4";
+        user6.timeWork = 0;
+
+        User user7 = new User();
+        user7.idUser = 841;
+        user7.userName = "liz";
+        user7.password = "lizz";
+        user7.name = "Lizbeth Palacios";
+        user7.userType = "T";
+        user7.habilityType = "4,6";
+        user7.timeWork = 0;
+
+        User user8 = new User();
+        user8.idUser = 999;
+        user8.userName = "fatima";
+        user8.password = "faty";
+        user8.name = "Fatima Arenas";
+        user8.userType = "T";
+        user8.habilityType = "2,5,6";
+        user8.timeWork = 0;
+
+        users.add(admin);
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+        users.add(user4);
+        users.add(user5);
+        users.add(user6);
+        users.add(user7);
+        users.add(user8);
         return users;
     }
 }

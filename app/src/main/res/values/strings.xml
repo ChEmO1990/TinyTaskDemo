@@ -51,5 +51,20 @@
     <string name="empty_data">Antes de continuar, por favor introduzca la información completa.</string>
 
 
+    <string name="message_remove_task">¿Finalizar tarea?</string>
+    <string name="message_remove_task_2">Recuerde que solo las tareas realmente terminadas pueden eliminarse</string>
+    <string name="message_remove_task_3">Si, Finalizar</string>
+    <string name="message_remove_task_4">Tarea Finalizada</string>
+    <string name="message_remove_task_5">Su tarea se marco como finalizada correctamente</string>
+    <string name="message_remove_task_6">OK</string>
+
+    <string name="message_task">¿Eliminar el registro?</string>
+    <string name="message_task_2">Recuerde que el registro ya no se podra recuperar.</string>
+    <string name="message_task_3">Si, Eliminar</string>
+    <string name="message_task_4">Tarea eliminada</string>
+    <string name="message_task_5">La tarea se eliminó correctamente</string>
+    <string name="message_task_6">OK</string>
+
+    <string name="message_assign_work">Se asignó una nueva tarea.</string>
 
 </resources>

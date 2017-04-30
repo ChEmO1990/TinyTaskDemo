@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.chemo.hdz.tinytaskdemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        tools:replace="android:icon"
         android:name=".TinyTaskApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +19,7 @@
             android:value="TinyTaskDemo.db" />
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="5" />
+            android:value="10" />
         <meta-data
             android:name="AA_MODELS"
             android:value=".com.chemo.hdz.tinytaskdemo.entities.Hability, .com.chemo.hdz.tinytaskdemo.entities.Task, .com.chemo.hdz.tinytaskdemo.entities.User" />

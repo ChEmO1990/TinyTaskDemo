@@ -22,12 +22,6 @@ public class User extends Model {
     @Column(name = "name")
     public String name;
 
-    @Column(name = "age")
-    public int age;
-
-    @Column(name = "gender")
-    public String gender;
-
     @Column(name = "user_type")
     public String userType;
 
@@ -41,13 +35,11 @@ public class User extends Model {
         super();
     }
 
-    public User(int idUser, String userName, String password, String name, int age, String gender, String userType, String habilityType, int timeWork) {
+    public User(int idUser, String userName, String password, String name, String userType, String habilityType, int timeWork) {
         this.idUser = idUser;
         this.userName = userName;
         this.password = password;
         this.name = name;
-        this.age = age;
-        this.gender = gender;
         this.userType = userType;
         this.habilityType = habilityType;
         this.timeWork = timeWork;
@@ -60,10 +52,9 @@ public class User extends Model {
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
                 ", userType='" + userType + '\'' +
                 ", habilityType='" + habilityType + '\'' +
+                ", timeWork=" + timeWork +
                 '}';
     }
 }

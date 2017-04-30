@@ -6,19 +6,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
 import com.chemo.hdz.tinytaskdemo.R;
+import com.chemo.hdz.tinytaskdemo.bus.events.RemoveTaskEvent;
 import com.chemo.hdz.tinytaskdemo.adapters.TaskAdapter;
 import com.chemo.hdz.tinytaskdemo.bus.events.AddTaskEvent;
-import com.chemo.hdz.tinytaskdemo.entities.Hability;
 import com.chemo.hdz.tinytaskdemo.entities.Task;
 import com.chemo.hdz.tinytaskdemo.ui.DividerItemDecoration;
 import com.chemo.hdz.tinytaskdemo.ui.fragments.AddTaskDialogFragment;
 import com.squareup.otto.Subscribe;
-import java.util.ArrayList;
+
 import java.util.List;
 import butterknife.BindView;
 
@@ -69,9 +68,15 @@ public class AdminActivity extends BaseActivity {
     }
 
     @Subscribe
-    public void refresh(AddTaskEvent addTaskEvent) {
-        Toast.makeText(this, "Se agrego una nueva tarea", Toast.LENGTH_SHORT).show();
+    public void onAddTaskListener(AddTaskEvent addTaskEvent) {
+        Toast.makeText(this, getString(R.string.message_assign_work), Toast.LENGTH_SHORT).show();
         itemsList.add(addTaskEvent.getTask());
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Subscribe
+    public void onRemoveTaskListener(RemoveTaskEvent removeTaskEvent) {
+        itemsList.remove(removeTaskEvent.getPosition());
         mAdapter.notifyDataSetChanged();
     }
 

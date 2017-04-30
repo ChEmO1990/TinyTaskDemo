@@ -50,6 +50,8 @@ dependencies {
     //Circles names library
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 
+    compile 'cn.pedant.sweetalert:library:1.3'
+
     //Inject view library
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'

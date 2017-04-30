@@ -8,15 +8,21 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+import com.activeandroid.query.Update;
 import com.chemo.hdz.tinytaskdemo.R;
 import com.chemo.hdz.tinytaskdemo.adapters.AssignTaskAdapter;
 import com.chemo.hdz.tinytaskdemo.adapters.TaskAdapter;
 import com.chemo.hdz.tinytaskdemo.adapters.WebServiceAdapter;
+import com.chemo.hdz.tinytaskdemo.bus.events.FinishTaskEvent;
+import com.chemo.hdz.tinytaskdemo.entities.Hability;
 import com.chemo.hdz.tinytaskdemo.entities.Task;
+import com.chemo.hdz.tinytaskdemo.entities.User;
 import com.chemo.hdz.tinytaskdemo.rest.responses.ItemResponse;
 import com.chemo.hdz.tinytaskdemo.session.SessionManager;
 import com.chemo.hdz.tinytaskdemo.ui.DividerItemDecoration;
 import com.chemo.hdz.tinytaskdemo.ui.activities.BaseActivity;
+import com.chemo.hdz.tinytaskdemo.util.Constants;
+import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,5 +73,11 @@ public class TechnicalActivity extends BaseActivity {
                 .where("id_user = ?", SessionManager.getUserSession().getIdUser())
                 .orderBy("Time ASC")
                 .execute();
+    }
+
+    @Subscribe
+    public void onFinishTask(FinishTaskEvent finishTaskEvent) {
+        itemsList = getAssignTasks();
+        mAdapter.notifyDataSetChanged();
     }
 }

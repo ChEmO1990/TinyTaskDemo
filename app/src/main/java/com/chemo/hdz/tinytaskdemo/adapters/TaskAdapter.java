@@ -9,13 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
+import com.activeandroid.query.Update;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.chemo.hdz.tinytaskdemo.R;
+import com.chemo.hdz.tinytaskdemo.bus.BusProvider;
+import com.chemo.hdz.tinytaskdemo.bus.events.RemoveTaskEvent;
 import com.chemo.hdz.tinytaskdemo.entities.Hability;
 import com.chemo.hdz.tinytaskdemo.entities.Task;
 import com.chemo.hdz.tinytaskdemo.entities.User;
-import com.chemo.hdz.tinytaskdemo.util.Constants;
 import com.chemo.hdz.tinytaskdemo.util.WordUtilities;
 import com.vstechlab.easyfonts.EasyFonts;
 
@@ -23,6 +26,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * Created by chemo on 4/28/17.
@@ -53,11 +57,35 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.WebServiceHold
         public WebServiceHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
+            view.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            int position = getLayoutPosition();
+            final int position = getLayoutPosition();
+            final Task taskSelected = itemsList.get(position);
+
+            //Only if the current task its finish
+            if( taskSelected.currentStatus == 0 ) {
+                new SweetAlertDialog(mContext, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText(mContext.getString(R.string.message_task))
+                        .setContentText(mContext.getString(R.string.message_task_2))
+                        .setConfirmText(mContext.getString(R.string.message_task_3))
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.setTitleText(mContext.getString(R.string.message_task_4))
+                                        .setContentText(mContext.getString(R.string.message_task_5))
+                                        .setConfirmText(mContext.getString(R.string.message_task_6))
+                                        .setConfirmClickListener(null)
+                                        .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+
+                                //Remove item
+                                new Delete().from(Task.class).where("_id = " + taskSelected.getId()).execute();
+                                BusProvider.getInstance().post(new RemoveTaskEvent(position));
+                            }
+                        }).show();
+            }
         }
     }
 
@@ -97,7 +125,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.WebServiceHold
         holder.item_status_task.setTypeface(EasyFonts.robotoBlack(mContext));
 
         //Check if the current task is in process
-        if( item.status.equals(Constants.STATUS_IN_PROCESS ) ) {
+        if( item.currentStatus == 1 ) {
             holder.item_status_task.setText(mContext.getString(R.string.current_status) + " " + mContext.getString(R.string.status_in_process));
             holder.item_status_task.setTextColor(Color.RED);
         } else {

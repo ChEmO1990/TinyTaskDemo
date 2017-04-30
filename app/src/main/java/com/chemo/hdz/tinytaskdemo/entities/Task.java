@@ -8,7 +8,7 @@ import com.activeandroid.annotation.Table;
  * Created by chemo on 4/27/17.
  */
 
-@Table(name = "Task", id = "id_task")
+@Table(name = "Task", id = "_id")
 public class Task extends Model {
     @Column(name = "id_user")
     public int idUser;
@@ -22,19 +22,29 @@ public class Task extends Model {
     @Column(name = "description")
     public String description;
 
-    @Column(name = "status")
-    public String status;
+    @Column(name = "current_status")
+    public int currentStatus;
 
     public Task() {
         super();
     }
 
-
-    public Task(int idUser, int idHability, int time, String description, String status) {
+    public Task(int idUser, int idHability, int time, String description, int currentStatus) {
         this.idUser = idUser;
         this.idHability = idHability;
         this.time = time;
         this.description = description;
-        this.status = status;
+        this.currentStatus = currentStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "idUser=" + idUser +
+                ", idHability=" + idHability +
+                ", time=" + time +
+                ", description='" + description + '\'' +
+                ", currentStatus=" + currentStatus +
+                '}';
     }
 }
