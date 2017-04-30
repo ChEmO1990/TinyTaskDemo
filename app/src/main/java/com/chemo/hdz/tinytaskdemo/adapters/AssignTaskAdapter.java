@@ -139,7 +139,6 @@ public class AssignTaskAdapter extends RecyclerView.Adapter<AssignTaskAdapter.We
         holder.item_status_task.setTypeface(EasyFonts.robotoBlack(mContext));
 
         //Check if the current task is in process
-        //Check if the current task is in process
         if( item.currentStatus == 1 ) {
             holder.item_status_task.setText(mContext.getString(R.string.current_status) + " " + mContext.getString(R.string.status_in_process));
             holder.item_status_task.setTextColor(Color.RED);
