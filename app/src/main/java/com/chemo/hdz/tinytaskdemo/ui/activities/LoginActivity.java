@@ -45,7 +45,7 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
 
         //Set font
-        titleLogin.setTypeface(EasyFonts.droidSerifBold(this));
+        titleLogin.setTypeface(EasyFonts.robotoBold(this));
     }
 
     @OnClick(R.id.btnLogin) void login() {

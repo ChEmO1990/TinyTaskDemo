@@ -56,7 +56,7 @@ public class AddTaskDialogFragment extends BaseSubscriberFragment {
         View rootView = inflater.inflate(R.layout.dialog_add_task, null, false);
         ButterKnife.bind(this, rootView);
 
-        title.setTypeface(EasyFonts.droidSerifBold(getActivity()));
+        title.setTypeface(EasyFonts.robotoBold(getActivity()));
 
         itemsHabilities = getHabilities();
 
