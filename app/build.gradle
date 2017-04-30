@@ -50,7 +50,11 @@ dependencies {
     //Circles names library
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 
+    //Fancy dialogs library
     compile 'cn.pedant.sweetalert:library:1.3'
+
+    //A Java serialization/deserialization librar
+    compile 'com.google.code.gson:gson:2.8.0'
 
     //Inject view library
     compile 'com.jakewharton:butterknife:8.5.1'

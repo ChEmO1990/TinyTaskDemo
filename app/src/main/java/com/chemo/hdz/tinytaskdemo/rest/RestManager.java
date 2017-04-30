@@ -2,9 +2,12 @@ package com.chemo.hdz.tinytaskdemo.rest;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.chemo.hdz.tinytaskdemo.bus.BusProvider;
 import com.chemo.hdz.tinytaskdemo.rest.events.GetItemServiceEvent;
 import com.chemo.hdz.tinytaskdemo.rest.events.SendItemServiceEvent;
+import com.chemo.hdz.tinytaskdemo.rest.events.WebServiceErrorEvent;
 import com.chemo.hdz.tinytaskdemo.rest.responses.ItemResponse;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
@@ -40,6 +43,7 @@ public class RestManager {
 
             @Override
             public void failure(RetrofitError error) {
+                BusProvider.getInstance().post(new WebServiceErrorEvent());
                 error.printStackTrace();
             }
         };

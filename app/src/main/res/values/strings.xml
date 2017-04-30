@@ -67,4 +67,9 @@
 
     <string name="message_assign_work">Se asignó una nueva tarea.</string>
 
+    <string name="title_data_recovery">Información recuperada</string>
+    <string name="message_data_recovery">La lista se recupero exitosamente de peticiones anteriores.</string>
+
+    <string name="title_error">Oops...</string>
+    <string name="message_data_error">Ocurrio un error al realizar la peticion al servicio web.</string>
 </resources>
