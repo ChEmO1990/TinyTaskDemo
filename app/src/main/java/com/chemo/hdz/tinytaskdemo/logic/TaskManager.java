@@ -58,7 +58,7 @@ public final class TaskManager {
         }
 
         //This is the selected user
-        User userSelected = Collections.max(copyItems, new compPopulation());
+        User userSelected = Collections.max(copyItems, new ComparatorHour());
 
         //Get current time work
         User currentUser = new Select()
@@ -68,19 +68,11 @@ public final class TaskManager {
 
         int currentTimeWork = currentUser.timeWork;
         int totalTimeUpdate = currentTimeWork += duration;
-        Log.i("CHEMOO", "Tiempo actual: " + currentTimeWork + " minutos");
-        Log.i("CHEMOO", "Nuevo tiempo: " + totalTimeUpdate + " minutos");
 
         new Update(User.class)
                 .set("Time_work = " + totalTimeUpdate)
                 .where("Id_user = ?", userSelected.idUser)
                 .execute();
-
-        for( int i = 0; i < copyItems.size(); i++ ) {
-            Log.i("CHEMOO", copyItems.get(i).idUser + " - "  + copyItems.get(i).userName);
-        }
-
-        Log.i("CHEMOO", userSelected.toString());
 
         Task newTask = new Task();
         newTask.idUser = userSelected.idUser;
@@ -103,7 +95,7 @@ public final class TaskManager {
         return s.split(",");
     }
 
-    public class compPopulation implements Comparator<User> {
+    public class ComparatorHour implements Comparator<User> {
         public int compare(User a, User b) {
             if (a.timeWork > b.timeWork)
                 return -1; // highest value first
